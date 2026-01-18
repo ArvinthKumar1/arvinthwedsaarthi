@@ -38,9 +38,9 @@ const modal = (img) => {
 };
 
 
-sr.reveal(`.rahul`,{ delay: 300, origin: 'top' })
-sr.reveal(`.rahul`, { origin: 'left', delay: 700 })
-sr.reveal(`.pranjal`, { origin: 'right', delay: 700 })
+sr.reveal(`.arvinth`,{ delay: 300, origin: 'top' })
+sr.reveal(`.arvinth`, { origin: 'left', delay: 700 })
+sr.reveal(`.aarthi`, { origin: 'right', delay: 700 })
 sr.reveal(`.gif,.home_txt`, { delay: 400, origin: 'top' })
 sr.reveal(`.top-right-decoration,.top-left-decoration`, { origin: 'left', delay: 2200 })
 sr.reveal(`.responsive-table__row`, { interval: 200 })

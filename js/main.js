@@ -1,28 +1,69 @@
-const audioButton = document.getElementById('button-music');
-const audioUrl = audioButton.getAttribute('data-url');
-const audio = new Audio(audioUrl);
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('invitation-modal');
+  const openBtn = document.getElementById('open-invitation-btn');
+  const heartBlast = document.getElementById('heart-blast');
+  const musicBtn = document.getElementById('button-music');
+  let audio;
+  let isPlaying = false;
 
-let isPlaying = false;
-
-audio.play().catch((error) => {
-    console.error("Error playing audio:", error);
-});
-
-audio.addEventListener('error', function () {
-    console.error("Error loading audio: " + audioUrl);
-});
-
-audioButton.addEventListener('click', () => {
-    if (isPlaying) {
+  // Music setup
+  if (musicBtn) {
+    const audioUrl = musicBtn.getAttribute('data-url');
+    audio = new Audio(audioUrl);
+    audio.loop = true;
+    musicBtn.addEventListener('click', function() {
+      if (isPlaying) {
         audio.pause();
-        audioButton.querySelector('i').classList.remove('fa-volume-up');
-        audioButton.querySelector('i').classList.add('fa-volume-off');
-    } else {
-        audio.play().catch((error) => {
-            console.error("Error playing audio:", error);
-        });
-        audioButton.querySelector('i').classList.remove('fa-volume-off');
-        audioButton.querySelector('i').classList.add('fa-volume-up');
+        musicBtn.querySelector('i').classList.remove('fa-volume-up');
+        musicBtn.querySelector('i').classList.add('fa-volume-off');
+      } else {
+        audio.play();
+        musicBtn.querySelector('i').classList.remove('fa-volume-off');
+        musicBtn.querySelector('i').classList.add('fa-volume-up');
+      }
+      isPlaying = !isPlaying;
+    });
+  }
+
+  // Heart blast animation
+  function blastHearts() {
+    if (!heartBlast) return;
+    for (let i = 0; i < 40; i++) {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤';
+      heart.style.position = 'absolute';
+      heart.style.fontSize = (Math.random() * 1.5 + 1.2) + 'rem';
+      heart.style.color = `hsl(${Math.random()*30+340},80%,70%)`;
+      heart.style.left = (50 + Math.random()*40 - 20) + '%';
+      heart.style.top = '50%';
+      heart.style.opacity = 1;
+      heart.style.transform = `translate(-50%, -50%) scale(${Math.random()*0.7+0.7})`;
+      heart.style.transition = 'all 1.2s cubic-bezier(.4,0,.2,1)';
+      heartBlast.appendChild(heart);
+      setTimeout(() => {
+        heart.style.top = (Math.random()*-60-20) + '%';
+        heart.style.left = (50 + Math.random()*60 - 30) + '%';
+        heart.style.opacity = 0;
+        heart.style.transform += ' scale(1.7)';
+      }, 10);
+      setTimeout(() => heart.remove(), 1300);
     }
-    isPlaying = !isPlaying;
+  }
+
+  // Open invitation button logic
+  if (openBtn) {
+    openBtn.addEventListener('click', function() {
+      blastHearts();
+      setTimeout(() => {
+        modal.style.display = 'none';
+        if (musicBtn) {
+          musicBtn.style.display = 'block';
+          audio.play();
+          isPlaying = true;
+          musicBtn.querySelector('i').classList.remove('fa-volume-off');
+          musicBtn.querySelector('i').classList.add('fa-volume-up');
+        }
+      }, 900);
+    });
+  }
 });
