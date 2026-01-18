@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +7,9 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="shortcut icon" href="favicon.png" type="image/png" />
+    
     <meta name="theme-color" content="#6e57e0" />
+
     <title>Arvinth & Aarthi's Wedding Invite | Apr 20</title>
 
     <link
@@ -28,24 +29,65 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/css/uikit.min.css"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4V7C4v5Xg5Qd+QkXWl0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" 
+      integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" 
+      crossorigin="anonymous"
+    >
+
   </head>
 
   <body>
-    <!-- <button type="button" id="button-music" 
-        style=" bottom: 20px; right: 20px;" 
-        class="btn btn-sm rounded-circle audio-icon btn-music position-fixed border" 
-        data-url="./assets/mp3/song.mp3">
-        <i class="fa fa-volume-up spin-button"></i>
-    </button> -->
+    <!-- Music Player Button -->
+    <button type="button" id="button-music" style="bottom: 20px; right: 20px;z-index:1500;display:none;" class="btn btn-sm rounded-circle audio-icon btn-music position-fixed border" data-url="./assets/mp3/song.mp3">
+      <i class="fa fa-volume-up spin-button"></i>
+    </button>
+
+    <nav class="navbar bg-dark navbar-expand fixed-bottom rounded-top-4 border-top p-0" id="navbar-menu">
+        <ul class="navbar-nav nav-justified w-100 align-items-center">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="d-block" style="font-size: 0.7rem;">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#bride">
+                    <i class="fa-solid fa-user-group"></i>
+                    <span class="d-block" style="font-size: 0.7rem;">Bride</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#wedding-date">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="d-block" style="font-size: 0.7rem;">Date</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#gallery">
+                    <i class="fa-solid fa-images"></i>
+                    <span class="d-block" style="font-size: 0.7rem;">Gallery</span>
+                </a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="https://wa.me/+917358616730?text=Hi%20Akshay%20%26%20kaviya,%20Congratulations!%20🥳🎉👏🤝👍🌷❤️" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span class="d-block" style="font-size: 0.7rem;">Wish</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <!--=============== sakura falling ===============-->
     <div class="sakura-falling"></div>
@@ -56,24 +98,12 @@
     
     </section> -->
 
-    <div class="wrap" style="width: 100%">
+    <div class="wrap" style="width: 100%" id="home">
       <img
         src="./assets/img/flower.png"
         alt="bg"
         class="position-absolute top-0 start-50 translate-middle-x img-fluid home_txt"
         style="width: 250px; height: 50px"
-      />
-      <img
-        src="./assets/img/flower-with-light-left.png"
-        alt="bg"
-        class="position-absolute bottom-0 start-0 img-fluid home__left"
-        style="width: 100px; height: 400px"
-      />
-      <img
-        src="./assets/img/flower-with-light-right.png"
-        alt="bg"
-        class="position-absolute bottom-0 end-0 img-fluid home__bottom"
-        style="width: 100px; height: 400px"
       />
 
       <div style="width: 100%;margin-top: 40px;">
@@ -95,9 +125,9 @@
               </h1>
             </div>
 
-            <h2 class="font-esthetic rahul" style="font-size: 2.5rem">Arvinth</h2>
+            <h2 class="font-esthetic arvinth" style="font-size: 2.5rem">Arvinth</h2>
             <h2 class="font-esthetic home_txt" style="font-size: 2.5rem">&amp;</h2>
-            <h2 class="font-esthetic pranjal" style="font-size: 2.5rem">Aarthi</h2>
+            <h2 class="font-esthetic aarthi" style="font-size: 2.5rem">Aarthi</h2>
             <img
               src="./assets/img/couple.png"
               alt="bg"
@@ -118,6 +148,31 @@
           </div>
         </div>
       </div>
+      <!-- Decorative SVG curve divider with smooth dark blend -->
+      <div class="section-divider fade-in-on-scroll">
+        <svg viewBox="0 0 1440 220" width="100%" height="220" style="display:block; margin-bottom:-2px;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="curveSiteGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#b2fff6" stop-opacity="0.7"/>
+              <stop offset="60%" stop-color="#56ffeb" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#b2fff6" stop-opacity="0.6"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,60 C360,120 1080,0 1440,60 L1440,220 L0,220 Z" fill="url(#curveSiteGradient)"/>
+        </svg>
+      </div>
+      <img
+        src="./assets/img/flower-with-light-left.png"
+        alt="bg"
+        class="position-absolute bottom-0 start-0 img-fluid home__left"
+        style="width: 100px; height: 400px; z-index: 1100; pointer-events:none;"
+      />
+      <img
+        src="./assets/img/flower-with-light-right.png"
+        alt="bg"
+        class="position-absolute bottom-0 end-0 img-fluid home__bottom"
+        style="width: 100px; height: 400px; z-index: 1100; pointer-events:none;"
+      />
     </div>
 
     <div
@@ -160,7 +215,7 @@
         </h2>
       </div>
       <div class="overflow-x-hidden pb-4">
-        <div class="rahul">
+        <div class="arvinth">
           <img
             src="./assets/images/groom.jpg"
             alt="cowo"
@@ -176,7 +231,7 @@
           &amp;
         </h2>
 
-        <div class="pranjal">
+        <div class="aarthi">
           <img
             src="./assets/images/bride.jpg"
             alt="cewe"
@@ -190,7 +245,7 @@
       </div>
     </section>
 
-    <div class="venueDetails">
+    <div class="venueDetails" id="venue-details">
       <div class="text-center">
         <h2 class="font-esthetic py-2 home_txt" style="font-size: 2rem">
           Venue Details
@@ -226,12 +281,11 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
               <br /><a
-                href="https://maps.app.goo.gl/XNyAmjbGjYcx2ABG8"
+                href="https://maps.app.goo.gl/Pq9xRZivPnDJ7Zgy8"
                 target="_blank"
                 class="btn btn-outline-light btn-sm rounded-pill shadow mb-2 px-3 mt-3 view-map-btn"
-                ><i class="fa-solid fa-map-location-dot me-2"></i>View Google
-                Maps</a
               >
+              <i class="fa-solid fa-map-location-dot me-2"></i>View Google Maps</a>
             </div>
           </div>
         </div>
@@ -267,7 +321,7 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
               <br /><a
-                href="https://maps.app.goo.gl/XNyAmjbGjYcx2ABG8"
+                href="https://maps.app.goo.gl/Pq9xRZivPnDJ7Zgy8"
                 target="_blank"
                 class="btn btn-outline-light btn-sm rounded-pill shadow mb-2 px-3 mt-3 view-map-btn"
                 ><i class="fa-solid fa-map-location-dot me-2"></i>View Google
@@ -277,9 +331,8 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="bottomSection text-center">
+    
+    <div class="bottomSection text-center" id="wedding-date">
       <!--=============== time ===============-->
       <div class="timerContainer">
         <h3
@@ -357,7 +410,7 @@
     <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="./js/scroll-anim.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit-icons.min.js"></script>
     <!-- animation js  -->
@@ -391,5 +444,5 @@ I'd eagerly await your kind presence in auspicious occasion of my family.
 
 -->
 
-  <!-- Built with love by Rahul Jangir -->
+  <!-- Built with love by Arvinth -->
 </html>
