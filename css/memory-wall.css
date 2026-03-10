@@ -1,0 +1,90 @@
+/* Container Layout */
+.memory-container {
+    padding-top: 20px;
+    padding-bottom: 100px;
+    min-height: 100vh;
+}
+
+/* Glassmorphism Form */
+.glass-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+}
+
+.custom-input {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white !important;
+}
+
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+    background: #f8d477;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Message Cards */
+.messages-container {
+    height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.message-card {
+    margin-bottom: 30px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.message-fieldset {
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.message-legend {
+    float: none;
+    width: auto;
+    padding: 0 10px;
+    margin-left: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Side Specific Styles */
+.bride-card .message-fieldset {
+    border-color: #ffb6c1; /* Pink Border */
+    background: rgba(255, 182, 193, 0.15); /* Transparent Pink */
+}
+.bride-card .message-legend { color: #ffb6c1; }
+
+.groom-card .message-fieldset {
+    border-color: #f8d477; /* Gold/Yellow Border */
+    background: rgba(248, 212, 119, 0.1);
+}
+.groom-card .message-legend { color: #f8d477; }
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .messages-container {
+        height: auto;
+        overflow-y: visible;
+    }
+    .form-section {
+        margin-top: 50px;
+    }
+}

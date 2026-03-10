@@ -12,63 +12,20 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/css/uikit.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4V7C4v5Xg5Qd+QkXWl0Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
-  <body>
-    <!-- Decorative background elements -->
+  <body class="brideAndGroomSection">
     <div class="sakura-falling"></div>
-    <img src="./assets/img/flower-with-light-left.png" alt="bg" class="position-absolute bottom-0 start-0 img-fluid home__left" style="width: 100px; height: 400px; z-index: 1100; pointer-events:none;" />
-    <img src="./assets/img/flower-with-light-right.png" alt="bg" class="position-absolute bottom-0 end-0 img-fluid home__bottom" style="width: 100px; height: 400px; z-index: 1100; pointer-events:none;" />
+    
+    <div class="container-fluid py-5" style="min-height: 100vh; padding-bottom: 100px;">
+      <div class="header-bg text-center mb-4">
+        <h2 class="font-esthetic py-2 home_txt uk-heading-line" style="font-size: 2.5rem; color: white;">
+          Engagement Gallery
+        </h2>
+      </div>
 
-    <!-- Navbar -->
-    <nav class="navbar bg-dark navbar-expand fixed-bottom rounded-top-4 border-top p-0" id="navbar-menu">
-      <ul class="navbar-nav nav-justified w-100 align-items-center">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#home">
-            <i class="fa-solid fa-house"></i>
-            <span class="d-block" style="font-size: 0.7rem;">Home</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#bride">
-            <i class="fa-solid fa-user-group"></i>
-            <span class="d-block" style="font-size: 0.7rem;">Bride</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#wedding-date">
-            <i class="fa-solid fa-calendar-check"></i>
-            <span class="d-block" style="font-size: 0.7rem;">Date</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="gallery.html">
-            <i class="fa-solid fa-images"></i>
-            <span class="d-block" style="font-size: 0.7rem;">Gallery</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://wa.me/+917010594934?text=Hi%20Arvinth%20Aarthi,%20Congratulations!" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span class="d-block" style="font-size: 0.7rem;">Wish</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Gallery Section -->
-    <section class="text-center px-2 brideAndGroomSection d-flex flex-column justify-content-between" id="gallery" style="min-height:100vh;padding-bottom:80px;margin-bottom:0;">
-      <div>
-        <div class="header-bg text-center">
-          <h2 class="font-esthetic py-2 home_txt uk-heading-line mt-5" style="font-size: 2rem">
-            Engagement Gallery
-          </h2>
-        </div>
-        <div class="container py-4">
-          <div class="d-block d-md-none mb-2">
-            <p class="home_txt mb-0 cherished-text" style="text-align:center;">Cherished moments from our Engagement journey!</p>
-          </div>
+      <div class="row align-items-center h-100">
+        <div class="col-lg-7 px-lg-5">
           <div id="engagementGallery" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner rounded-4 shadow">
               <div class="carousel-item active">
@@ -80,73 +37,87 @@
               <div class="carousel-item">
                 <img src="assets/image/gallery/3.jpg" class="d-block w-100 gallery-img" alt="Gallery 3">
               </div>
-              <div class="carousel-item">
-                <img src="assets/image/gallery/4.jpg" class="d-block w-100 gallery-img" alt="Gallery 4">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/image/gallery/5.jpg" class="d-block w-100 gallery-img" alt="Gallery 5">
-              </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#engagementGallery" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#engagementGallery" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
             </button>
           </div>
-          <div class="d-none d-md-flex justify-content-center align-items-center mt-4">
-            <p class="home_txt mb-0 cherished-text">Cherished moments from our Engagement journey!</p>
+        </div>
+
+        <div class="col-lg-5 text-center mt-4 mt-lg-0">
+          <div class="p-4 rounded-4" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+            <i class="fa-solid fa-camera-retro mb-3" style="font-size: 2rem; color: #f8d477;"></i>
+            <p class="home_txt cherished-text" style="font-size: 1.5rem; line-height: 1.6;">
+              Cherished moments from our Engagement journey!
+            </p>
+            <hr style="color: #f8d477; width: 50%; margin: 20px auto;">
+            <p style="font-style: italic; opacity: 0.8;">Captured with love</p>
           </div>
         </div>
       </div>
-      <div class="footer">
-        <p>Built with love by Arvinth</p>
-      </div>
-    </section>
+    </div>
+
+    <!-- <div class="footer fixed-bottom mb-5 pb-4 text-center">
+      <p style="color: white !important;">Built with love by Arvinth</p>
+    </div> -->
+
+    <nav class="navbar bg-dark navbar-expand fixed-bottom rounded-top-4 border-top p-0" id="navbar-menu">
+    <ul class="navbar-nav nav-justified w-100 align-items-center">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html#home">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <span style="font-size: 0.7rem;">Invite</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.html#wedding-date">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span style="font-size: 0.7rem;">Date</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="gallery.html">
+                <i class="fa-solid fa-images"></i>
+                <span style="font-size: 0.7rem;">Gallery</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="memory-wall.html">
+                <i class="fa-solid fa-pen-nib"></i>
+                <span style="font-size: 0.7rem;">Wishes</span>
+            </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="fixed-bottom text-end pe-3 pb-2 d-none d-md-block" style="z-index: 1200; pointer-events: none;">
+        <p style="color: rgba(255,255,255,0.6) !important; font-size: 0.8rem; margin: 0;">Built with love by Arvinth</p>
+    </div>
 
     <style>
       .gallery-img {
-        max-height: 400px;
+        max-height: 500px;
         min-height: 400px;
         object-fit: contain;
         background: rgba(255,255,255,0.2);
-        padding: 24px;
-        border-radius: 24px;
-        width: 100%;
-        display: block;
+        padding: 15px;
+      }
+      .cherished-text {
+        font-family: 'Dancing Script', cursive;
+        color: white;
       }
       @media (max-width: 768px) {
-        .cherished-text {
-          display: block;
-          text-align: center !important;
-          margin-top: 16px !important;
-          margin-bottom: 0 !important;
-          justify-content: center !important;
-        }
-        .container .d-flex.justify-content-end {
-          justify-content: center !important;
-        }
         .gallery-img {
-          max-height: 250px;
-          min-height: 250px;
-          padding: 12px;
-          border-radius: 12px;
+          max-height: 300px;
+          min-height: 300px;
         }
       }
     </style>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/scroll-anim.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit-icons.min.js"></script>
-    <script src="./js/scrollreveal.min.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/joiner.js"></script>
   </body>
 </html>
