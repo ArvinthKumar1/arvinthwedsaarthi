@@ -221,3 +221,44 @@ textarea.custom-input-clean::-webkit-scrollbar-thumb {
     background: rgba(248, 212, 119, 0.3);
     border-radius: 10px;
 }
+
+/* Align the radio section to the left and add gap */
+.side-selection-container {
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto; /* Adds gap above and below */
+    padding-left: 5px;
+}
+
+.side-selection-container p {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Add gap between Message Box and Send Button */
+.submit-btn-container {
+    margin-top: 30px; /* Gap above the button */
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    background: #f8d477;
+    color: #333;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:hover {
+    background: #ffffff; /* Turns white/bright gold */
+    color: #b8860b; /* Deep gold text */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 6px 20px rgba(248, 212, 119, 0.4); /* Golden glow */
+}

@@ -10,12 +10,12 @@ app.http('memorywall', {
     handler: async (request, context) => {
         context.log(`Processing ${request.method} request for Memory Wall`);
 
-        const origin = request.headers.get('origin') || request.headers.get('referer');
-        const allowedOrigin = "https://arvinthaarthi.in"; 
+        // const origin = request.headers.get('origin') || request.headers.get('referer');
+        // const allowedOrigin = "https://arvinthaarthi.in"; 
 
-        if (process.env.NODE_ENV === 'production' && !origin?.includes(allowedOrigin)) {
-            return { status: 403, body: "Unauthorized: Access is denied." };
-        }
+        // if (process.env.NODE_ENV === 'production' && !origin?.includes(allowedOrigin)) {
+        //     return { status: 403, body: "Unauthorized: Access is denied." };
+        // }
 
         try {
             console.log("Inside Try");

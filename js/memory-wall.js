@@ -56,6 +56,7 @@
 
                 if (response.ok) {
                     alert("Wishes sent! It will appear once approved by the couple.");
+                    fireConfetti();
                     form.reset();
                 } else {
                     alert("Submission failed. Please try again later.");
@@ -68,6 +69,29 @@
             }
         };
     }
+
+    function fireConfetti() {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#f8d477', '#ffffff', '#ffb6c1'], // Gold, White, Pink
+            shapes: ['circle', 'square'],
+            ticks: 200,
+            gravity: 1.2,
+            scalar: 1.2,
+            drift: 0,
+        });
+    }
+
+    // fireConfetti();
+
+// Example usage inside your submit listener:
+// form.addEventListener('submit', (e) => {
+//    e.preventDefault();
+//    fireConfetti(); 
+//    // ... your fetch/upload code ...
+// });
 
     // Initial load
     window.addEventListener('DOMContentLoaded', loadWishes);

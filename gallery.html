@@ -115,6 +115,36 @@
           min-height: 300px;
         }
       }
+      /* 1. Lock the Frame Height */
+      .carousel-inner {
+          height: 500px; /* This keeps the outer layout constant */
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(5px);
+      }
+
+      .gallery-img {
+          width: 100%;
+          height: 100% !important; /* Force image to fill the locked frame */
+          object-fit: contain; /* Keeps the whole photo visible without cropping */
+          padding: 10px;
+      }
+
+      /* 2. Responsive adjustment for Mobile */
+      @media (max-width: 768px) {
+          .carousel-inner {
+              height: 350px; /* Constant height for mobile */
+          }
+          .gallery-img {
+              padding: 5px;
+          }
+      }
+
+      /* 3. Consistency with your Glossy theme */
+      .cherished-text {
+          font-family: 'Dancing Script', cursive;
+          color: white;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

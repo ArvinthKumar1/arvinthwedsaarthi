@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/memory-wall.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body class="brideAndGroomSection">
     <div class="sakura-falling"></div>
@@ -22,31 +23,27 @@
                     <form id="memoryForm">
                         <div class="input-group-custom">
                             <fieldset class="input-border-fieldset">
-                                <legend class="input-legend" id="nameLegend">Your Name</legend>
+                                <legend class="input-legend">Your Name</legend>
                                 <input type="text" id="userName" class="custom-input-clean" placeholder="Enter your name" required>
                             </fieldset>
                         </div>
-                        <div class="mb-3 text-center side-selector">
-                            <label class="text-white me-3">Whose side are you on?</label><br>
-                            <div class="form-check form-check-inline mt-2">
-                                <input class="form-check-input" type="radio" name="side" id="brideSide" value="bride" checked>
-                                <label class="form-check-label text-white" for="brideSide">Aarthi (Bride)</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="side" id="groomSide" value="groom">
-                                <label class="form-check-label text-white" for="groomSide">Arvinth (Groom)</label>
-                            </div>
+
+                        <div class="side-selection-container">
+                            <p>Are you Team Bride or Groom?</p>
+                            <label><input type="radio" name="side" value="bride" checked> Aarthi (Bride)</label>
+                            <label style="margin-left: 15px;"><input type="radio" name="side" value="groom"> Arvinth (Groom)</label>
                         </div>
+
                         <div class="input-group-custom">
                             <fieldset class="input-border-fieldset message-field">
-                                <legend class="input-legend" id="messageLegend">Your Message</legend>
-                                <textarea id="userMessage" class="custom-input-clean" placeholder="Enter your message" required rows="4"></textarea>
+                                <legend class="input-legend">Your Blessing</legend>
+                                <textarea id="userMessage" class="custom-input-clean" placeholder="Write your message here..." required></textarea>
                             </fieldset>
                         </div>
-                        <!-- <div class="mb-3">
-                            <textarea id="userMessage" class="form-control custom-input" rows="4" placeholder="Your wishes..." required></textarea>
-                        </div> -->
-                        <button type="submit" class="btn w-100 submit-btn">Send Love <i class="fa-solid fa-heart ms-2"></i></button>
+
+                        <div class="submit-btn-container">
+                            <button type="submit" class="submit-btn">Send Blessings ❤️</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -87,9 +84,9 @@
       </ul>
     </nav>
 
-    <div class="fixed-bottom text-end pe-3 pb-2 d-none d-md-block" style="z-index: 1200; pointer-events: none;">
+    <!-- <div class="fixed-bottom text-end pe-3 pb-2 d-none d-md-block" style="z-index: 1200; pointer-events: none;">
         <p style="color: rgba(255,255,255,0.6) !important; font-size: 0.8rem; margin: 0;">Built with love by Arvinth</p>
-    </div>
+    </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/memory-wall.js"></script>
