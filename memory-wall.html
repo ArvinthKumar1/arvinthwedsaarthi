@@ -20,8 +20,11 @@
                 <div class="glass-form p-4 rounded-4 shadow">
                     <h2 class="font-esthetic text-white text-center mb-4" style="font-size: 2.5rem;">Leave a Message</h2>
                     <form id="memoryForm">
-                        <div class="mb-3">
-                            <input type="text" id="userName" class="form-control custom-input" placeholder="Your Name *" required>
+                        <div class="input-group-custom">
+                            <fieldset class="input-border-fieldset">
+                                <legend class="input-legend" id="nameLegend">Your Name</legend>
+                                <input type="text" id="userName" class="custom-input-clean" placeholder="Enter your name" required>
+                            </fieldset>
                         </div>
                         <div class="mb-3 text-center side-selector">
                             <label class="text-white me-3">Whose side are you on?</label><br>
@@ -34,9 +37,15 @@
                                 <label class="form-check-label text-white" for="groomSide">Arvinth (Groom)</label>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <textarea id="userMessage" class="form-control custom-input" rows="4" placeholder="Your wishes..." required></textarea>
+                        <div class="input-group-custom">
+                            <fieldset class="input-border-fieldset message-field">
+                                <legend class="input-legend" id="messageLegend">Your Message</legend>
+                                <textarea id="userMessage" class="custom-input-clean" placeholder="Enter your message" required rows="4"></textarea>
+                            </fieldset>
                         </div>
+                        <!-- <div class="mb-3">
+                            <textarea id="userMessage" class="form-control custom-input" rows="4" placeholder="Your wishes..." required></textarea>
+                        </div> -->
                         <button type="submit" class="btn w-100 submit-btn">Send Love <i class="fa-solid fa-heart ms-2"></i></button>
                     </form>
                 </div>
@@ -83,7 +92,8 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
+    <script src="./js/memory-wall.js"></script>
+    <!-- <script>
         // Placeholder API Logic
         const dummyData = [
             { name: "Suresh", side: "groom", message: "Congratulations brother! So happy for you and Aarthi." },
@@ -111,6 +121,6 @@
         };
 
         window.onload = renderMessages;
-    </script>
+    </script> -->
 </body>
 </html>
