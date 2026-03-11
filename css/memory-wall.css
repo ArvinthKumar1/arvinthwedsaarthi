@@ -1,0 +1,264 @@
+/* Container Layout */
+.memory-container {
+    padding-top: 20px;
+    padding-bottom: 100px;
+    min-height: 100vh;
+}
+
+/* Glassmorphism Form */
+.glass-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+}
+
+.custom-input {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white !important;
+}
+
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+    background: #f8d477;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Message Cards */
+.messages-container {
+    height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.message-card {
+    margin-bottom: 30px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.message-fieldset {
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.message-legend {
+    float: none;
+    width: auto;
+    padding: 0 10px;
+    margin-left: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Side Specific Styles */
+.bride-card .message-fieldset {
+    border-color: #ffb6c1; /* Pink Border */
+    background: rgba(255, 182, 193, 0.15); /* Transparent Pink */
+}
+.bride-card .message-legend { color: #ffb6c1; }
+
+.groom-card .message-fieldset {
+    border-color: #f8d477; /* Gold/Yellow Border */
+    background: rgba(248, 212, 119, 0.1);
+}
+.groom-card .message-legend { color: #f8d477; }
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .messages-container {
+        height: auto;
+        overflow-y: visible;
+    }
+    .form-section {
+        margin-top: 50px;
+    }
+}
+
+/* 1. The Container */
+.input-group-custom {
+    position: relative;
+    margin-top: 15px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. The Fieldset - Now using Flex to center content */
+.input-border-fieldset {
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 0 15px; 
+    transition: all 0.3s ease;
+    background: transparent !important;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    height: 50px; /* Fixed height for consistency */
+    
+    /* THE FIX: Vertical centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 3. The Legend (YOUR NAME) */
+.input-legend {
+    float: none;
+    width: auto;
+    max-width: 0px; 
+    opacity: 0;
+    margin-left: 5px;
+    font-size: 0.7rem;
+    color: #f8d477;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    /* Position the legend half-way on the top border */
+    line-height: 1;
+    margin-top: -12px; /* Pulls it up into the line */
+    margin-bottom: 0;
+    background: transparent;
+}
+
+/* 4. The Input Field - Centered vertically */
+.custom-input-clean {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    color: white !important;
+    outline: none !important;
+    font-size: 1rem;
+    /* Reset all padding/margin to let Flexbox handle centering */
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 30px; 
+    display: flex;
+    align-items: center;
+    caret-color: #f8d477; 
+}
+
+/* 5. Interaction States */
+.input-border-fieldset:focus-within {
+    border-color: #f8d477;
+}
+
+.input-border-fieldset:focus-within .input-legend,
+.input-border-fieldset:has(input:not(:placeholder-shown)) .input-legend {
+    max-width: 200px; 
+    opacity: 1;
+    padding: 0 8px; 
+}
+
+/* Fix for Placeholder centering in some browsers */
+.custom-input-clean::placeholder {
+    line-height: normal;
+    vertical-align: middle;
+}
+
+/* 1. Force Placeholder Color (Fixing the "Black" text) */
+.custom-input-clean::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important; /* Soft white */
+    opacity: 1; /* Firefox fix */
+    transition: color 0.3s ease;
+}
+
+/* 2. Hide Placeholder IMMEDIATELY on Focus */
+.custom-input-clean:focus::placeholder {
+    color: transparent !important;
+    transition: color 0.2s ease;
+}
+
+/* 3. Handle Microsoft Edge / Internet Explorer specifics */
+.custom-input-clean:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 4. Handle Safari/Chrome webkit */
+.custom-input-clean::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 1. Make the Message Fieldset taller */
+.message-field {
+    height: 120px !important; /* Adjust this to how big you want the box */
+    padding-top: 5px !important;
+    display: block !important; /* Standard block layout works better for tall textareas */
+}
+
+/* 2. Style the Textarea specifically */
+textarea.custom-input-clean {
+    height: 100px !important; /* Should be slightly less than the fieldset height */
+    resize: none; /* Prevents users from dragging the corner and breaking your layout */
+    padding-top: 10px !important;
+    line-height: 1.5; /* Makes multi-line text easier to read */
+    scrollbar-width: thin; /* Slim scrollbar for Firefox */
+    scrollbar-color: rgba(248, 212, 119, 0.3) transparent;
+}
+
+/* 3. Style the Scrollbar for Chrome/Safari */
+textarea.custom-input-clean::-webkit-scrollbar {
+    width: 6px;
+}
+textarea.custom-input-clean::-webkit-scrollbar-thumb {
+    background: rgba(248, 212, 119, 0.3);
+    border-radius: 10px;
+}
+
+/* Align the radio section to the left and add gap */
+.side-selection-container {
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto; /* Adds gap above and below */
+    padding-left: 5px;
+}
+
+.side-selection-container p {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Add gap between Message Box and Send Button */
+.submit-btn-container {
+    margin-top: 30px; /* Gap above the button */
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    background: #f8d477;
+    color: #333;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:hover {
+    background: #ffffff; /* Turns white/bright gold */
+    color: #b8860b; /* Deep gold text */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 6px 20px rgba(248, 212, 119, 0.4); /* Golden glow */
+}
