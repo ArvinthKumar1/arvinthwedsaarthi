@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", countDownDate);
 
 
 
-/*===== SCROLL REVEAL ANIMATION =====*/
+
 const sr = ScrollReveal({
     origin: 'top',
     distance: '1.5rem',

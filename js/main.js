@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let audio;
   let isPlaying = false;
 
-  // Music setup
   if (musicBtn) {
     const audioUrl = musicBtn.getAttribute('data-url');
     audio = new Audio(audioUrl);
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Heart blast animation
   function blastHearts() {
     if (!heartBlast) return;
     for (let i = 0; i < 40; i++) {
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Open invitation button logic
   if (openBtn) {
     openBtn.addEventListener('click', function() {
       blastHearts();

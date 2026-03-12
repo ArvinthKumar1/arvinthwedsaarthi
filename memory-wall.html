@@ -19,7 +19,7 @@
         <div class="row h-100">
             <div class="col-lg-5 form-section order-2 order-lg-1">
                 <div class="glass-form p-4 rounded-4 shadow">
-                    <h2 class="font-esthetic text-white text-center mb-4" style="font-size: 2.5rem;">Leave a Message</h2>
+                    <h2 class="font-esthetic text-white text-center mb-4" style="font-size: 2.5rem;">A Piece of Your Heart for Our Wall</h2>
                     <form id="memoryForm">
                         <div class="input-group-custom">
                             <fieldset class="input-border-fieldset">
@@ -36,13 +36,13 @@
 
                         <div class="input-group-custom">
                             <fieldset class="input-border-fieldset message-field">
-                                <legend class="input-legend">Your Blessing</legend>
-                                <textarea id="userMessage" class="custom-input-clean" placeholder="Write your message here..." required></textarea>
+                                <legend class="input-legend">Your Message</legend>
+                                <textarea id="userMessage" class="custom-input-clean" placeholder="Share a favorite memory or a wish..." required></textarea>
                             </fieldset>
                         </div>
 
                         <div class="submit-btn-container">
-                            <button type="submit" class="submit-btn">Send Blessings ❤️</button>
+                            <button type="submit" class="submit-btn">Post ❤️</button>
                         </div>
                     </form>
                 </div>
@@ -84,40 +84,7 @@
       </ul>
     </nav>
 
-    <!-- <div class="fixed-bottom text-end pe-3 pb-2 d-none d-md-block" style="z-index: 1200; pointer-events: none;">
-        <p style="color: rgba(255,255,255,0.6) !important; font-size: 0.8rem; margin: 0;">Built with love by Arvinth</p>
-    </div> -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/memory-wall.js"></script>
-    <!-- <script>
-        // Placeholder API Logic
-        const dummyData = [
-            { name: "Suresh", side: "groom", message: "Congratulations brother! So happy for you and Aarthi." },
-            { name: "Priya", side: "bride", message: "Aarthi, you're going to be the most beautiful bride ever!" },
-            { name: "Vijay", side: "groom", message: "Villupuram is ready for the biggest celebration!" }
-        ];
-
-        function renderMessages() {
-            const wrapper = document.getElementById('messagesWrapper');
-            wrapper.innerHTML = dummyData.map(msg => `
-                <div class="message-card ${msg.side}-card">
-                    <fieldset class="message-fieldset">
-                        <legend class="message-legend">
-                            <i class="fa-solid fa-heart"></i> ${msg.name}
-                        </legend>
-                        <p>${msg.message}</p>
-                    </fieldset>
-                </div>
-            `).join('');
-        }
-
-        document.getElementById('memoryForm').onsubmit = (e) => {
-            e.preventDefault();
-            alert("Message sent! (Dummy Action)");
-        };
-
-        window.onload = renderMessages;
-    </script> -->
 </body>
 </html>

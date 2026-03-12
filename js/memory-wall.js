@@ -1,12 +1,32 @@
 (function() {
-    // 1. Configuration - Automatically switches URL based on where the site is running
-    const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-    console.log(isLocal);
     const API_URL = "https://api-arvinthaarthi.azurewebsites.net/api/memorywall";
+    const formContainer = document.querySelector('.glass-form');
 
     console.log(`API URL set to: ${API_URL}`);
 
-    // 2. Load Approved Wishes
+    if (localStorage.getItem('hasSubmittedWishes')) {
+        showSuccessState();
+    }
+
+    async function showSuccessState() {
+        if (formContainer) {
+            formContainer.innerHTML = `
+                <div class="text-center py-5 animate__animated animate__fadeIn">
+                    <i class="fa-solid fa-circle-check mb-3" style="font-size: 3.5rem; color: #f8d477;"></i>
+                    <h3 class="cherished-text" style="font-size: 2rem;">Thank You!</h3>
+                    <p class="px-3" style="color: white; opacity: 0.9;">
+                        Your message has been received. <br> 
+                        It will appear on the wall once approved by the couple.
+                    </p>
+                    <hr style="color: #f8d477; width: 30%; margin: 20px auto;">
+                    <p style="font-size: 0.8rem; font-style: italic; color: #f8d477;">
+                        "A collection of hearts, a wall of memories."
+                    </p>
+                </div>
+            `;
+        }
+    }
+
     async function loadWishes() {
         const wrapper = document.getElementById('messagesWrapper');
         if (!wrapper) return;
@@ -30,7 +50,6 @@
         }
     }
 
-    // 3. Handle Form Submission
     const form = document.getElementById('memoryForm');
     if (form) {
         form.onsubmit = async (e) => {
@@ -55,9 +74,11 @@
                 });
 
                 if (response.ok) {
-                    alert("Wishes sent! It will appear once approved by the couple.");
+                    localStorage.setItem('hasSubmittedWishes', 'true');
+
                     fireConfetti();
-                    form.reset();
+                    
+                    showSuccessState();
                 } else {
                     alert("Submission failed. Please try again later.");
                 }
@@ -75,7 +96,7 @@
             particleCount: 150,
             spread: 70,
             origin: { y: 0.6 },
-            colors: ['#f8d477', '#ffffff', '#ffb6c1'], // Gold, White, Pink
+            colors: ['#f8d477', '#ffffff', '#ffb6c1'], 
             shapes: ['circle', 'square'],
             ticks: 200,
             gravity: 1.2,
@@ -84,15 +105,5 @@
         });
     }
 
-    // fireConfetti();
-
-// Example usage inside your submit listener:
-// form.addEventListener('submit', (e) => {
-//    e.preventDefault();
-//    fireConfetti(); 
-//    // ... your fetch/upload code ...
-// });
-
-    // Initial load
     window.addEventListener('DOMContentLoaded', loadWishes);
 })();

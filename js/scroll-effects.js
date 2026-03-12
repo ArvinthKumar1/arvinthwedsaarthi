@@ -1,6 +1,4 @@
-// Super cool scroll progress bar and smooth scroll
 
-// Progress bar
 (function() {
   const bar = document.createElement('div');
   bar.id = 'scroll-progress';
@@ -16,7 +14,6 @@
   updateBar();
 })();
 
-// Optional: smooth scroll for anchor links
 (function() {
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {

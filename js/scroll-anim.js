@@ -1,4 +1,3 @@
-// Fade in .fade-in-on-scroll elements when they enter viewport
 (function() {
   function onScroll() {
     document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
