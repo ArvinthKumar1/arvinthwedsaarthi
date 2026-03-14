@@ -1398,11 +1398,7 @@ section {
 	/* modern blur */
 	box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
 	border-top: 1.5px solid #f8d47744;
-	position: fixed;
-	bottom: 0;
-	bottom: env(safe-area-inset-bottom, 0);
-	left: 0;
-	right: 0;
+	/* subtle gold border */
 }
 
 #navbar-menu .nav-link {
