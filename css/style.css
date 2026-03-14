@@ -1398,6 +1398,11 @@ section {
 	/* modern blur */
 	box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
 	border-top: 1.5px solid #f8d47744;
+	position: fixed;
+	bottom: 0;
+	bottom: env(safe-area-inset-bottom, 0);
+	left: 0;
+	right: 0;
 }
 
 #navbar-menu .nav-link {
@@ -2011,4 +2016,12 @@ section {
   border-color: #f8d477 !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(248,212,119,0.2);
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html {
+  height: -webkit-fill-available;
 }
