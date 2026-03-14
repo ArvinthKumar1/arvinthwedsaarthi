@@ -2013,11 +2013,3 @@ section {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(248,212,119,0.2);
 }
-
-body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-}
-html {
-  height: -webkit-fill-available;
-}
