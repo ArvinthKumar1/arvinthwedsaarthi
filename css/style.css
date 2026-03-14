@@ -1756,3 +1756,272 @@ section {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(248, 212, 119, 0.4);
 }
+/* ============================================================
+   HERO SECTION — entrance animations
+   ============================================================ */
+
+/* "You are invited" subtitle — fade + slide down */
+.hero-invite-text {
+  opacity: 0;
+  animation: heroFadeDown 1s ease forwards 0.2s;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+/* Names — fade + slide up with stagger */
+.hero-name-arvinth {
+  opacity: 0;
+  animation: heroFadeUp 0.9s ease forwards 0.5s;
+}
+.hero-name-amp {
+  opacity: 0;
+  animation: heroFadeUp 0.9s ease forwards 0.75s;
+}
+.hero-name-aarthi {
+  opacity: 0;
+  animation: heroFadeUp 0.9s ease forwards 1s;
+}
+
+/* Couple photo — scale in */
+.hero-photo {
+  opacity: 0;
+  animation: heroScaleIn 1s ease forwards 1.2s;
+}
+
+/* Date text — fade in last */
+.hero-date {
+  opacity: 0;
+  animation: heroFadeDown 0.8s ease forwards 1.5s;
+}
+
+/* Save the date button — fade in last */
+.save-date-btn {
+  opacity: 0;
+  animation: heroFadeDown 0.8s ease forwards 1.8s;
+  display: inline-block;
+  background: #f8d477;
+  color: #333 !important;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0s;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-decoration: none !important;
+}
+.save-date-btn:hover {
+  background: #ffffff;
+  color: #b8860b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(248,212,119,0.4);
+}
+
+@keyframes heroFadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroScaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ============================================================
+   NAMES — gold shimmer effect
+   ============================================================ */
+.hero-name-arvinth h2,
+.hero-name-aarthi h2 {
+  background: linear-gradient(
+    90deg,
+    #f8d477 0%,
+    #fffbe6 35%,
+    #f8d477 55%,
+    #c8860a 80%,
+    #f8d477 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3.5s linear infinite;
+  filter: drop-shadow(0 2px 8px rgba(248,212,119,0.35));
+}
+
+/* "&" between names */
+.hero-name-amp h2 {
+  color: rgba(255,255,255,0.85) !important;
+  text-shadow: 0 0 18px rgba(248,212,119,0.5), 0 2px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 250% center; }
+}
+
+/* ============================================================
+   DATE TEXT — soft glow pulse
+   ============================================================ */
+.hero-date p {
+  color: rgba(255,255,255,0.95) !important;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  text-shadow: 0 0 14px rgba(248,212,119,0.5), 0 2px 6px rgba(0,0,0,0.2);
+  animation: datePulse 3s ease-in-out infinite;
+}
+
+@keyframes datePulse {
+  0%, 100% { text-shadow: 0 0 10px rgba(248,212,119,0.4), 0 2px 6px rgba(0,0,0,0.2); }
+  50%       { text-shadow: 0 0 22px rgba(248,212,119,0.8), 0 2px 8px rgba(0,0,0,0.2); }
+}
+
+/* ============================================================
+   COUPLE PHOTO — gentle float
+   ============================================================ */
+.hero-photo img {
+  animation: heroScaleIn 1s ease forwards 1.2s,
+             gentleFloat 5s ease-in-out infinite 2.5s;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+  border-radius: 12px;
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ============================================================
+   SECTION HEADINGS (Venue, Bride & Groom, etc)
+   ============================================================ */
+.section-title-gold {
+  background: linear-gradient(90deg, #f8d477 0%, #fffbe6 50%, #c8860a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 6px rgba(248,212,119,0.3));
+}
+
+/* Venue event detail text */
+.venue-event-name {
+  background: linear-gradient(90deg, #f8d477, #fffbe6, #f8d477);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* venue detail icon + text rows */
+.venue-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+.venue-detail-row i {
+  color: #f8d477;
+  font-size: 0.9rem;
+  width: 16px;
+}
+
+/* ============================================================
+   COUNTDOWN TIMER — styled numbers
+   ============================================================ */
+.timer-number {
+  font-size: 2rem !important;
+  font-weight: 700;
+  background: linear-gradient(180deg, #fffbe6 0%, #f8d477 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 6px rgba(248,212,119,0.4));
+  line-height: 1;
+}
+.timer-label {
+  font-size: 0.65rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6) !important;
+  display: block;
+  margin-top: 2px;
+}
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(248,212,119,0.2);
+  border-radius: 10px;
+  min-width: 60px;
+}
+.timer-separator {
+  color: #f8d477;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 0 4px;
+  padding-bottom: 14px;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   CTA / FOOTER TEXT
+   ============================================================ */
+.cta-text {
+  color: rgba(255,255,255,0.85) !important;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.happiness-text {
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, #f8d477 0%, #fffbe6 50%, #f8d477 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+  font-family: 'Dancing Script', cursive;
+}
+.built-by-text {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45) !important;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   SCROLL FADE-IN for sections
+   ============================================================ */
+.section-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   VIEW MAP BUTTON — match gold theme
+   ============================================================ */
+.view-map-btn {
+  color: #f8d477 !important;
+  border-color: rgba(248,212,119,0.5) !important;
+  transition: all 0.3s ease;
+}
+.view-map-btn:hover {
+  background: rgba(248,212,119,0.15) !important;
+  border-color: #f8d477 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(248,212,119,0.2);
+}
