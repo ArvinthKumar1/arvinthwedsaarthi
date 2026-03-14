@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -12,32 +13,61 @@
     <link rel="stylesheet" href="./css/memory-wall.css" />
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
+
 <body class="brideAndGroomSection">
     <div class="sakura-falling"></div>
 
     <div class="container-fluid memory-container">
+        <div class="header-bg text-center mb-4">
+            <div class="sparkling-heading-wrap">
+                <h2 class="font-esthetic py-2 home_txt sparkling-heading" style="font-size: 2.5rem; color: white;">
+                    Memory Wall
+                </h2>
+                <div class="spark-line-wrap">
+                    <div class="spark-line"></div>
+                    <div class="spark-diamond"></div>
+                    <div class="spark-line"></div>
+                </div>
+                <div class="sparkles-container" aria-hidden="true">
+                    <span class="sparkle s1">✦</span>
+                    <span class="sparkle s2">✦</span>
+                    <span class="sparkle s3">✦</span>
+                    <span class="sparkle s4">✦</span>
+                    <span class="sparkle s5">✦</span>
+                    <span class="sparkle s6">✦</span>
+                </div>
+            </div>
+        </div>
         <div class="row h-100">
             <div class="col-lg-5 form-section order-2 order-lg-1">
                 <div class="glass-form p-4 rounded-4 shadow">
-                    <h2 class="font-esthetic text-white text-center mb-4" style="font-size: 2.5rem;">A Piece of Your Heart for Our Wall</h2>
+                    <h2 class="font-esthetic text-white text-center mb-4" style="font-size: 2.5rem;">A Piece of Your
+                        Heart for Our Wall</h2>
                     <form id="memoryForm">
                         <div class="input-group-custom">
                             <fieldset class="input-border-fieldset">
                                 <legend class="input-legend">Your Name</legend>
-                                <input type="text" id="userName" class="custom-input-clean" placeholder="Enter your name" required>
+                                <input type="text" id="userName" class="custom-input-clean"
+                                    placeholder="Enter your name" maxlength="60" required>
                             </fieldset>
                         </div>
 
                         <div class="side-selection-container">
                             <p>Are you Team Bride or Groom?</p>
                             <label><input type="radio" name="side" value="bride" checked> Aarthi (Bride)</label>
-                            <label style="margin-left: 15px;"><input type="radio" name="side" value="groom"> Arvinth (Groom)</label>
+                            <label style="margin-left: 15px;"><input type="radio" name="side" value="groom"> Arvinth
+                                (Groom)</label>
                         </div>
 
                         <div class="input-group-custom">
                             <fieldset class="input-border-fieldset message-field">
                                 <legend class="input-legend">Your Message</legend>
-                                <textarea id="userMessage" class="custom-input-clean" placeholder="Share a favorite memory or a wish..." required></textarea>
+                                <textarea id="userMessage" class="custom-input-clean"
+                                    placeholder="Share a favorite memory or a wish..." maxlength="300"
+                                    required></textarea>
+                                <div id="charCounter"
+                                    style="text-align:right; font-size:0.75rem; color:rgba(255,255,255,0.5); margin-top:4px; width:100%; max-width:400px;">
+                                    300 remaining</div>
                             </fieldset>
                         </div>
 
@@ -50,41 +80,62 @@
 
             <div class="col-lg-7 wall-section order-1 order-lg-2">
                 <div id="messagesWrapper" class="messages-container p-3">
-                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <nav class="navbar bg-dark navbar-expand fixed-bottom rounded-top-4 border-top p-0" id="navbar-menu">
-      <ul class="navbar-nav nav-justified w-100 align-items-center">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html#home">
-                <i class="fa-solid fa-envelope-open-text"></i>
-                <span style="font-size: 0.7rem;">Invite</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="index.html#wedding-date">
-                <i class="fa-solid fa-calendar-check"></i>
-                <span style="font-size: 0.7rem;">Date</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="gallery.html">
-                <i class="fa-solid fa-images"></i>
-                <span style="font-size: 0.7rem;">Gallery</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="memory-wall.html">
-                <i class="fa-solid fa-pen-nib"></i>
-                <span style="font-size: 0.7rem;">Wishes</span>
-            </a>
-        </li>
-      </ul>
+        <ul class="navbar-nav nav-justified w-100 align-items-center">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html#home">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <span style="font-size: 0.7rem;">Invite</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html#wedding-date">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span style="font-size: 0.7rem;">Date</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery.html">
+                    <i class="fa-solid fa-images"></i>
+                    <span style="font-size: 0.7rem;">Gallery</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="memory-wall.html">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <span style="font-size: 0.7rem;">Wishes</span>
+                </a>
+            </li>
+        </ul>
     </nav>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>
     <script src="./js/memory-wall.min.js"></script>
+    <script>
+        $('.sakura-falling').sakura();
+        // Character counter
+
+        const textarea = document.getElementById('userMessage');
+        const counter = document.getElementById('charCounter');
+        textarea.addEventListener('input', function () {
+            const remaining = 300 - this.value.length;
+            counter.textContent = remaining + ' remaining';
+            counter.style.color = remaining < 30 ? '#ff6b6b' : 'rgba(255,255,255,0.5)';
+        });
+
+        // Trim whitespace on submit
+        document.getElementById('memoryForm').addEventListener('submit', function () {
+            document.getElementById('userName').value = document.getElementById('userName').value.trim();
+            textarea.value = textarea.value.trim();
+        }, true);
+
+    </script>
 </body>
+
 </html>
