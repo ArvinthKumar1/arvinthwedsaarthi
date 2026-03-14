@@ -1736,3 +1736,23 @@ section {
 	color: white;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.save-date-btn {
+  display: inline-block;
+  background: #f8d477;
+  color: #333;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.save-date-btn:hover {
+  background: #ffffff;
+  color: #b8860b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(248, 212, 119, 0.4);
+}
