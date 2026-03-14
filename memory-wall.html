@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row h-100">
             <div class="col-lg-5 form-section order-2 order-lg-1">
                 <div class="glass-form p-4 rounded-4 shadow">
@@ -135,6 +135,16 @@
             document.getElementById('userName').value = document.getElementById('userName').value.trim();
             textarea.value = textarea.value.trim();
         }, true);
+
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                setTimeout(() => {
+                    window.scrollTo({ top: window.scrollY, behavior: 'instant' });
+                    document.body.scrollTop = document.body.scrollTop;
+                }, 100);
+            });
+        });
 
     </script>
 </body>
