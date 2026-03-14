@@ -346,18 +346,6 @@
       }, { threshold: 0.1 });
       document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
 
-      // Page transition out
-      document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('javascript')) return;
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.body.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
-          document.body.style.opacity = '0';
-          document.body.style.transform = 'translateY(-6px)';
-          setTimeout(() => { window.location.href = href; }, 260);
-        });
-      });
     </script>
 </body>
 
