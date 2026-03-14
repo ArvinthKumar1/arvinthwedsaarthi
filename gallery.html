@@ -26,7 +26,11 @@
 
       <div class="row align-items-center h-100">
         <div class="col-lg-7 px-lg-5">
-          <div id="engagementGallery" class="carousel slide" data-bs-ride="carousel">
+          <div id="engagementGallery" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <!-- Progress bar -->
+            <div class="carousel-progress-wrap">
+              <div class="carousel-progress-bar" id="carouselProgress"></div>
+            </div>
             <div class="carousel-inner rounded-4 shadow">
               <div class="carousel-item active">
                 <img src="assets/image/gallery/1.webp" class="d-block w-100 gallery-img" alt="Gallery 1">
@@ -50,6 +54,7 @@
             <button class="carousel-control-next" type="button" data-bs-target="#engagementGallery" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
+            <div class="carousel-slide-counter" id="slideCounter">1 / 5</div>
           </div>
         </div>
 
@@ -85,7 +90,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="gallery.html">
+            <a class="nav-link active" href="gallery.html">
                 <i class="fa-solid fa-images"></i>
                 <span style="font-size: 0.7rem;">Gallery</span>
             </a>
@@ -100,56 +105,113 @@
     </nav>
 
     <style>
-      .gallery-img {
-        max-height: 500px;
-        min-height: 400px;
-        object-fit: contain;
-        background: rgba(255,255,255,0.2);
-        padding: 15px;
+      /* Lock frame height */
+      .carousel-inner {
+        height: 500px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
       }
+      .gallery-img {
+        width: 100%;
+        height: 100% !important;
+        object-fit: contain;
+        padding: 10px;
+      }
+      @media (max-width: 768px) {
+        .carousel-inner { height: 350px; }
+        .gallery-img { padding: 5px; }
+      }
+
+      /* Progress bar */
+      .carousel-progress-wrap {
+        height: 3px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 3px 3px 0 0;
+        overflow: hidden;
+      }
+      .carousel-progress-bar {
+        height: 100%;
+        width: 0%;
+        background: #f8d477;
+        border-radius: 3px;
+        transition: width linear;
+      }
+      .carousel-progress-bar.animating {
+        width: 100%;
+      }
+
+      /* Slide counter */
+      .carousel-slide-counter {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.45);
+        color: #f8d477;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        padding: 3px 12px;
+        border-radius: 20px;
+        backdrop-filter: blur(4px);
+        pointer-events: none;
+        z-index: 10;
+      }
+
       .cherished-text {
         font-family: 'Dancing Script', cursive;
         color: white;
-      }
-      @media (max-width: 768px) {
-        .gallery-img {
-          max-height: 300px;
-          min-height: 300px;
-        }
-      }
-      /* 1. Lock the Frame Height */
-      .carousel-inner {
-          height: 500px; /* This keeps the outer layout constant */
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(5px);
-      }
-
-      .gallery-img {
-          width: 100%;
-          height: 100% !important; /* Force image to fill the locked frame */
-          object-fit: contain; /* Keeps the whole photo visible without cropping */
-          padding: 10px;
-      }
-
-      /* 2. Responsive adjustment for Mobile */
-      @media (max-width: 768px) {
-          .carousel-inner {
-              height: 350px; /* Constant height for mobile */
-          }
-          .gallery-img {
-              padding: 5px;
-          }
-      }
-
-      /* 3. Consistency with your Glossy theme */
-      .cherished-text {
-          font-family: 'Dancing Script', cursive;
-          color: white;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       }
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const INTERVAL = 4000;
+      const carouselEl = document.getElementById('engagementGallery');
+      const progressBar = document.getElementById('carouselProgress');
+      const slideCounter = document.getElementById('slideCounter');
+      const items = carouselEl.querySelectorAll('.carousel-item');
+      const total = items.length;
+
+      const carousel = new bootstrap.Carousel(carouselEl, {
+        interval: INTERVAL,
+        ride: 'carousel',
+        wrap: true
+      });
+
+      function startProgress() {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        // Force reflow so the reset is applied before animating
+        progressBar.getBoundingClientRect();
+        progressBar.style.transition = `width ${INTERVAL}ms linear`;
+        progressBar.style.width = '100%';
+      }
+
+      function updateCounter() {
+        const activeIndex = [...items].findIndex(i => i.classList.contains('active'));
+        slideCounter.textContent = `${activeIndex + 1} / ${total}`;
+      }
+
+      // On every slide (including manual), restart progress and update counter
+      carouselEl.addEventListener('slide.bs.carousel', () => {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+      });
+
+      carouselEl.addEventListener('slid.bs.carousel', () => {
+        updateCounter();
+        startProgress();
+        // Resume auto-play after any manual interaction
+        carousel.cycle();
+      });
+
+      // Kick off on page load
+      updateCounter();
+      startProgress();
+
+    </script>
   </body>
 </html>

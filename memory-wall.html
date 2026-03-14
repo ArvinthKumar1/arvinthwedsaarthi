@@ -24,7 +24,7 @@
                         <div class="input-group-custom">
                             <fieldset class="input-border-fieldset">
                                 <legend class="input-legend">Your Name</legend>
-                                <input type="text" id="userName" class="custom-input-clean" placeholder="Enter your name" required>
+                                <input type="text" id="userName" class="custom-input-clean" placeholder="Enter your name" maxlength="60" required>
                             </fieldset>
                         </div>
 
@@ -37,7 +37,8 @@
                         <div class="input-group-custom">
                             <fieldset class="input-border-fieldset message-field">
                                 <legend class="input-legend">Your Message</legend>
-                                <textarea id="userMessage" class="custom-input-clean" placeholder="Share a favorite memory or a wish..." required></textarea>
+                                <textarea id="userMessage" class="custom-input-clean" placeholder="Share a favorite memory or a wish..." maxlength="300" required></textarea>
+                                <div id="charCounter" style="text-align:right; font-size:0.75rem; color:rgba(255,255,255,0.5); margin-top:4px; width:100%; max-width:400px;">300 remaining</div>
                             </fieldset>
                         </div>
 
@@ -76,7 +77,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="memory-wall.html">
+            <a class="nav-link active" href="memory-wall.html">
                 <i class="fa-solid fa-pen-nib"></i>
                 <span style="font-size: 0.7rem;">Wishes</span>
             </a>
@@ -86,5 +87,22 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/memory-wall.min.js"></script>
+    <script>
+      // Character counter
+      const textarea = document.getElementById('userMessage');
+      const counter = document.getElementById('charCounter');
+      textarea.addEventListener('input', function () {
+        const remaining = 300 - this.value.length;
+        counter.textContent = remaining + ' remaining';
+        counter.style.color = remaining < 30 ? '#ff6b6b' : 'rgba(255,255,255,0.5)';
+      });
+
+      // Trim whitespace on submit
+      document.getElementById('memoryForm').addEventListener('submit', function () {
+        document.getElementById('userName').value = document.getElementById('userName').value.trim();
+        textarea.value = textarea.value.trim();
+      }, true);
+
+    </script>
 </body>
 </html>
