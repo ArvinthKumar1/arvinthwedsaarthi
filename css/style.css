@@ -1999,19 +1999,6 @@ section {
 }
 
 /* ============================================================
-   SCROLL FADE-IN for sections
-   ============================================================ */
-.section-fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.section-fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================================================
    VIEW MAP BUTTON — match gold theme
    ============================================================ */
 .view-map-btn {
