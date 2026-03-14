@@ -61,21 +61,37 @@
 
 /* Side Specific Styles */
 .bride-card .message-fieldset {
-    border-color: #ffb6c1; /* Pink Border */
-    background: rgba(255, 182, 193, 0.15); /* Transparent Pink */
+    border-color: #ffb6c1;
+    /* Pink Border */
+    background: rgba(255, 182, 193, 0.15);
+    /* Transparent Pink */
 }
-.bride-card .message-legend { color: #ffb6c1; }
+
+.bride-card .message-legend {
+    color: #ffb6c1;
+}
 
 .groom-card .message-fieldset {
-    border-color: #f8d477; /* Gold/Yellow Border */
+    border-color: #f8d477;
+    /* Gold/Yellow Border */
     background: rgba(248, 212, 119, 0.1);
 }
-.groom-card .message-legend { color: #f8d477; }
+
+.groom-card .message-legend {
+    color: #f8d477;
+}
 
 /* Floating Animation */
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* Mobile Responsive */
@@ -84,6 +100,7 @@
         height: auto;
         overflow-y: visible;
     }
+
     .form-section {
         margin-top: 50px;
     }
@@ -92,7 +109,7 @@
 /* 1. The Container */
 .input-group-custom {
     position: relative;
-    margin-top: 15px; 
+    margin-top: 15px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -102,14 +119,15 @@
 .input-border-fieldset {
     border: 1.5px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
-    padding: 0 15px; 
+    padding: 0 15px;
     transition: all 0.3s ease;
     background: transparent !important;
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
-    height: 50px; /* Fixed height for consistency */
-    
+    height: 50px;
+    /* Fixed height for consistency */
+
     /* THE FIX: Vertical centering */
     display: flex;
     flex-direction: column;
@@ -120,7 +138,7 @@
 .input-legend {
     float: none;
     width: auto;
-    max-width: 0px; 
+    max-width: 0px;
     opacity: 0;
     margin-left: 5px;
     font-size: 0.7rem;
@@ -130,10 +148,11 @@
     transition: all 0.3s ease;
     white-space: nowrap;
     overflow: hidden;
-    
+
     /* Position the legend half-way on the top border */
     line-height: 1;
-    margin-top: -12px; /* Pulls it up into the line */
+    margin-top: -12px;
+    /* Pulls it up into the line */
     margin-bottom: 0;
     background: transparent;
 }
@@ -149,10 +168,10 @@
     /* Reset all padding/margin to let Flexbox handle centering */
     padding: 0 !important;
     margin: 0 !important;
-    height: 30px; 
+    height: 30px;
     display: flex;
     align-items: center;
-    caret-color: #f8d477; 
+    caret-color: #f8d477;
 }
 
 /* 5. Interaction States */
@@ -162,9 +181,9 @@
 
 .input-border-fieldset:focus-within .input-legend,
 .input-border-fieldset:has(input:not(:placeholder-shown)) .input-legend {
-    max-width: 200px; 
+    max-width: 200px;
     opacity: 1;
-    padding: 0 8px; 
+    padding: 0 8px;
 }
 
 /* Fix for Placeholder centering in some browsers */
@@ -175,8 +194,10 @@
 
 /* 1. Force Placeholder Color (Fixing the "Black" text) */
 .custom-input-clean::placeholder {
-    color: rgba(255, 255, 255, 0.5) !important; /* Soft white */
-    opacity: 1; /* Firefox fix */
+    color: rgba(255, 255, 255, 0.5) !important;
+    /* Soft white */
+    opacity: 1;
+    /* Firefox fix */
     transition: color 0.3s ease;
 }
 
@@ -228,6 +249,7 @@ textarea.custom-input-clean {
 textarea.custom-input-clean::-webkit-scrollbar {
     width: 6px;
 }
+
 textarea.custom-input-clean::-webkit-scrollbar-thumb {
     background: rgba(248, 212, 119, 0.3);
     border-radius: 10px;
@@ -238,7 +260,8 @@ textarea.custom-input-clean::-webkit-scrollbar-thumb {
     text-align: left;
     width: 100%;
     max-width: 400px;
-    margin: 20px auto; /* Adds gap above and below */
+    margin: 20px auto;
+    /* Adds gap above and below */
     padding-left: 5px;
 }
 
@@ -250,7 +273,8 @@ textarea.custom-input-clean::-webkit-scrollbar-thumb {
 
 /* Add gap between Message Box and Send Button */
 .submit-btn-container {
-    margin-top: 30px; /* Gap above the button */
+    margin-top: 30px;
+    /* Gap above the button */
     display: flex;
     justify-content: center;
 }
@@ -268,10 +292,14 @@ textarea.custom-input-clean::-webkit-scrollbar-thumb {
 }
 
 .submit-btn:hover {
-    background: #ffffff; /* Turns white/bright gold */
-    color: #b8860b; /* Deep gold text */
-    transform: translateY(-2px); /* Slight lift */
-    box-shadow: 0 6px 20px rgba(248, 212, 119, 0.4); /* Golden glow */
+    background: #ffffff;
+    /* Turns white/bright gold */
+    color: #b8860b;
+    /* Deep gold text */
+    transform: translateY(-2px);
+    /* Slight lift */
+    box-shadow: 0 6px 20px rgba(248, 212, 119, 0.4);
+    /* Golden glow */
 }
 
 /* Styling for the success state icon */
@@ -281,9 +309,20 @@ textarea.custom-input-clean::-webkit-scrollbar-thumb {
 }
 
 @keyframes pulseGlow {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* Ensure the cherished-text class is available here too */
