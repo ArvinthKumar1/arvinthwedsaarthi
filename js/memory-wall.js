@@ -2,6 +2,30 @@
     const API_URL = "https://api-arvinthaarthi.azurewebsites.net/api/memorywall";
     const formContainer = document.querySelector('.glass-form');
 
+    const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1482690393169461369/KPKcGx4AK368YpVkiUoQBmHQa2EM_cIeRfcooY3Z75q8ZfpxOSwvrEHoxdefFdQ0cHtp";
+
+    function sendDiscordNotification(entryDetails) {
+    fetch(DISCORD_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+        content: "🆕 **New Memory Wall Post Submitted!**",
+        embeds: [
+            {
+            title: "New Entry Awaiting Approval",
+            color: 0x5865F2, 
+            fields: [
+                { name: "Submitted By", value: entryDetails.name || "Unknown", inline: true },
+                { name: "Team", value: entryDetails.team === "bride" ? "Bride's Side" : "Groom's Side", inline: true },
+                { name: "Message", value: entryDetails.message || "N/A", inline: false },
+                { name: "Time", value: new Date().toLocaleString(), inline: true }
+            ]
+            }
+        ]
+        })
+    });
+    }
+
     console.log(`API URL set to: ${API_URL}`);
 
     if (localStorage.getItem('hasSubmittedWishes')) {
@@ -75,6 +99,12 @@
 
                 if (response.ok) {
                     localStorage.setItem('hasSubmittedWishes', 'true');
+
+                    sendDiscordNotification({
+                        name: document.getElementById('userName').value,
+                        team: document.querySelector('input[name="side"]:checked').value,
+                        message: document.getElementById('userMessage').value
+                    });
 
                     fireConfetti();
                     
