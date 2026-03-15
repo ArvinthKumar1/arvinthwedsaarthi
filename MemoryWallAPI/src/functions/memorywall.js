@@ -65,7 +65,8 @@ app.http('memorywall', {
                     senderName: name,
                     message: message,
                     side: side || "bride",
-                    isApproved: false, 
+                    isApproved: false,
+                    isRejected: false, 
                     ipAddress: userIp,
                     browser: userAgent,
                     submittedAt: new Date().toISOString()
