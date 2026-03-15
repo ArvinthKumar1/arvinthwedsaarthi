@@ -56,7 +56,7 @@ function validateToken(authHeader) {
 
 // ── CORS ───────────────────────────────────────────────────────────
 const ALLOWED_ORIGINS = [
-    'https://invite.arvinthaarthi.in'
+    'https://app.arvinthaarthi.in'
 ];
 
 function getCorsHeaders(request) {
